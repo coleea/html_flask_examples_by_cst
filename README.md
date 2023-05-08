@@ -9,6 +9,7 @@
 
 ## Install (ubuntu)
 
+never use python 3.10 version is incompetible
 
 ```
 sudo apt install pipenv
