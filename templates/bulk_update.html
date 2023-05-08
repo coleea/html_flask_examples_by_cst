@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Bulk update
+{% endblock %}
+
+{% block head %}
+    <style>
+        .htmx-settling tr.deactivate td {
+            background: lightcoral;
+        }
+        .htmx-settling tr.activate td {
+            background: darkseagreen;
+        }
+        tr td {
+            transition: all 1.2s;
+        }
+
+    </style>
+{% endblock %}
+
+
+{% block content %}
+    <h2><a href="https://htmx.org/examples/bulk-update/">Bulk Update</a></h2>
+
+    <form id="checked-contacts">
+        <table>
+        <thead>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+            {{ render_partial('partials/bulk_update_get.html', contacts=contacts) }}
+            
+        </tbody>
+        </table>
+    </form>
+    
+    <div hx-include="#checked-contacts" hx-target="#tbody">
+    <a class="btn" hx-put="/activate">Activate</a>
+    <a class="btn" hx-put="/deactivate">Deactivate</a>
+    </div>
+{% endblock %}

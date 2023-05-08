@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Edit Row
+{% endblock %}
+
+{% block content %}
+
+<h2><a href="https://htmx.org/examples/edit-row/">Edit row</a></h2>
+
+<table class="table delete-row-example">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody hx-target="closest tr" hx-swap="outerHTML">
+        {{ render_partial('partials/edit_row_get.html', contacts=contacts) }}
+    </tbody>
+</table>
+{% endblock %}

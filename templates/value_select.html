@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Value Select
+{% endblock %}
+
+{% block content %}
+
+<h2><a href="https://htmx.org/examples/value-select/">Value Select</a></h2>
+
+<div>
+  <label >Make</label>
+  <select name="make" hx-get="/models" hx-target="#models" hx-indicator=".htmx-indicator">
+    <option value="toyota">Toyota</option>
+    <option value="audi">Audi</option>
+    <option value="bmw">BMW</option>
+  </select>
+</div>
+<div>
+  <label>Model</label>
+  <select id="models" name="model">
+    {{ render_partial(
+      'partials/value_select_models.html',
+      models=models
+    ) }}
+  </select>
+</div>
+
+
+
+{% endblock %}

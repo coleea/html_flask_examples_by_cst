@@ -1,0 +1,6 @@
+<div hx-target="this" hx-swap="outerHTML" class="error">
+    <label>Email Address</label>
+    <input name="email" hx-post="/contact/email" hx-indicator="#ind" value="{{ email }}">
+    <img id="ind" src="/img/bars.svg" class="htmx-indicator"/>
+    <div class='error-message'>{{ error_message }}</div>
+  </div> 

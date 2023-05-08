@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Infinite Scroll
+{% endblock %}
+
+{% block content %}
+
+<h2><a href="https://htmx.org/examples/infinite-scroll/">Infinite Scroll</a></h2>
+
+<table hx-indicator=".htmx-indicator">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{ render_partial('partials/infinite_scroll_get.html', 
+        next_page=next_page,
+        agents=agents, 
+        last_agent=last_agent) }}
+    </tbody>
+</table>
+
+<center>
+    <img class="htmx-indicator" 
+    width="60" 
+    src="/static/bars.svg">
+</center>
+
+{% endblock %}

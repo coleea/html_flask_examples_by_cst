@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  HTMX Examples
+{% endblock %}
+
+{% block content %}
+
+<h1><a href="https://htmx.org/examples/">HTMX Examples</h1>
+
+<ul>
+  <li><a href="{{ url_for('get_click_to_edit') }}">Click to Edit</a></li>
+    
+  <li><a href="{{ url_for('get_bulk_update') }}">Bulk Update</a></li>
+
+  <li><a href="{{ url_for('get_click_to_load') }}">Click to Load</a></li>
+
+  <li><a href="{{ url_for('get_delete_row') }}">Delete Row</a></li>
+
+  <li><a href="{{ url_for('get_edit_row') }}">Edit Row</a></li>
+  
+  <li><a href="{{ url_for('get_lazy_load') }}">Lazy Loading</a></li>
+  
+  <li><a href="{{ url_for('get_inline_validation') }}">Inline Validation</a></li>
+ 
+  <li><a href="{{ url_for('get_infinite_scroll') }}">Infinite Scroll</a></li>
+
+  <li><a href="{{ url_for('get_active_search') }}">Active Search</a></li>
+  
+  <li><a href="{{ url_for('get_progress_bar') }}">Progress Bar</a></li>
+
+  <li><a href="{{ url_for('get_value_select') }}">Value Select</a></li>
+  
+  <li><a href="{{ url_for('get_dialogs') }}">Dialogs - Browser</a></li>
+  
+  <li><a href="{{ url_for('get_custom_modal_dialogs') }}">Custom Modal Dialogs</a></li>
+ 
+  <li><a href="{{ url_for('get_tabs_hateoas') }}">Tabs (Using HATEOAS)</a></li>
+
+  <li><a href="{{ url_for('get_tabs_hyperscript') }}">Tabs (Using Hyperscript)</a></li>
+
+  <li><a href="{{ url_for('get_update_other_content') }}">Updating Other Content</a></li>
+
+  <li><a href="{{ url_for('get_sortable') }}">Sortable</a></li>
+
+  <li><a href="{{ url_for('get_confirm') }}">A Customized Confirmation UI</a></li>
+
+  </ul>
+{% endblock %}

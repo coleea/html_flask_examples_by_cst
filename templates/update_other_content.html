@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Updating Other Content
+{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+
+<h2><a href="https://htmx.org/examples/update-other-content/">
+  Updating Other Content</a></h2>
+
+  <h3><a href="https://htmx.org/examples/update-other-content/#expand">
+    Solution 1: Expand the Target</a></h3>
+  <div id="table-and-form">
+    <h2>Contacts</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="contacts-table">
+        {{ render_partial(
+          'partials/update_other_content_expand_target.html',
+          contacts=contacts) }}
+      </tbody>
+    </table>
+    <h2>Add A Contact</h2>
+    <form hx-post="/update-other-contents-expand-target-contacts" hx-target="#table-and-form">
+      <div>
+        <label>
+          Name
+              <input name="name" type="text">  
+        </label>
+        <label>
+          Email
+              <input name="email" type="email">  
+        </label>
+    </div>
+      <button class="btn btn-default">Submit</button>
+    </form>
+</div>
+
+
+
+{% endblock %}

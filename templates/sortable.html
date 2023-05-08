@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Sortable
+{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+
+<h2><a href="https://htmx.org/examples/sortable/">Sortable</a></h2>
+
+
+<form class="sortable" hx-post="/items" hx-trigger="end">
+  {{ render_partial(
+    'partials/sortable_items.html',
+    items=items) }}
+</form>
+
+<script>
+  htmx.onLoad(function(content) {
+    var sortables = content.querySelectorAll(".sortable");
+    for (var i = 0; i < sortables.length; i++) {
+      var sortable = sortables[i];
+      new Sortable(sortable, {
+          animation: 150,
+          ghostClass: 'blue-background-class'
+      });
+    }
+  })
+</script>
+{% endblock %}

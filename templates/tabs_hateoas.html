@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Tabs (Using HATEOAS)
+{% endblock %}
+
+{% block head %}
+   <style>
+    #demo-canvas {
+      display:none;
+    }
+
+    #tabs > .tab-list {
+      border-bottom: solid 3px #eee;
+    }
+
+    #tabs > .tab-list a {
+      display: inline-block;
+      padding: 5px 10px;
+      cursor:pointer;
+    }
+
+    #tabs > .tab-list a.selected {
+      background-color: #eee;
+    }
+
+    #tabs > .tab-content {
+      padding:10px;
+      margin-bottom:100px;
+    }
+  </style>
+
+{% endblock %}
+
+{% block content %}
+
+<h2><a href="https://htmx.org/examples/tabs-hateoas/">Tabs (Using HATEOAS)</a></h2>
+
+<div id="tabs" hx-get="/tab1" hx-trigger="load after:100ms" hx-target="#tabs" hx-swap="innerHTML"></div>
+
+
+{% endblock %}

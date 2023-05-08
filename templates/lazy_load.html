@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Lazy Loading
+{% endblock %}
+
+{% block head %}
+  <style>
+    .htmx-settling img {
+      opacity: 0;
+    }
+    img {
+    transition: opacity 300ms ease-in;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+<h2><a href="https://htmx.org/examples/lazy-load/">Lazy Loading</a></h2>
+
+<div hx-get="/graph" hx-trigger="load">
+  <img  alt="Result loading..." class="htmx-indicator" width="150" src="/static/bars.svg"/>
+</div>
+
+
+{% endblock %}

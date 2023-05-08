@@ -1,0 +1,13 @@
+ 
+{% for contact in contacts %}
+  <tr class="">
+    <td> {{ contact.name }} </td>
+    <td> {{ contact.email }} </td>
+    <td> {{ contact.status }} </td>
+    <td>
+      <button class="btn btn-danger" hx-delete="/contact/{{ contact.id }}">
+        Delete
+      </button>
+    </td>
+  </tr>
+{% endfor %}

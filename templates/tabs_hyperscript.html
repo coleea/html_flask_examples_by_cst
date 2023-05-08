@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Tabs (Using Hyperscript)
+{% endblock %}
+
+{% block head %}
+   <style>
+    #demo-canvas {
+      display:none;
+    }
+
+    #tabs > .tab-list {
+      border-bottom: solid 3px #eee;
+    }
+
+    #tabs > .tab-list a {
+      display: inline-block;
+      padding: 5px 10px;
+      cursor:pointer;
+    }
+
+    #tabs > .tab-list a.selected {
+      background-color: #eee;
+    }
+
+    #tabs > .tab-content {
+      padding:10px;
+      margin-bottom:100px;
+    }
+  </style>
+
+{% endblock %}
+
+{% block content %}
+
+<h2><a href="https://htmx.org/examples/tabs-hyperscript/">Tabs (Using Hyperscript)</a></h2>
+
+<div id="tabs" hx-target="#tab-contents" _="on htmx:afterOnLoad take .selected for event.target">
+	<a hx-get="/tab1-hyperscript" class="selected">Tab 1</a>
+	<a hx-get="/tab2-hyperscript">Tab 2</a>
+	<a hx-get="/tab3-hyperscript">Tab 3</a>
+</div>
+  
+<div id="tab-contents" hx-get="/tab1-hyperscript" hx-trigger="load"></div>
+
+{% endblock %}

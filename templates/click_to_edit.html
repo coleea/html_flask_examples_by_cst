@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Click to Edit
+{% endblock %}
+
+{% block content %}
+<h2><a href="https://htmx.org/examples/click-to-edit/">Click to edit</a></h2>
+
+{{ render_partial('partials/click_to_edit_contact_get.html', id=id, contact=contact) }}
+
+{% endblock %}

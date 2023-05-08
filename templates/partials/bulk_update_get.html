@@ -1,0 +1,9 @@
+ 
+{% for contact in contacts %}
+  <tr class="">
+    <td><input type='checkbox' name='ids' value='{{ contact.id }}'></td>
+    <td> {{ contact.name }} </td>
+    <td> {{ contact.surname }} </td>
+    <td> {{ contact.status }} </td>
+  </tr>
+{% endfor %}

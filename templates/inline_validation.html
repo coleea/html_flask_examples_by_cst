@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Inline Validation
+{% endblock %}
+
+{% block head %}
+<style>
+   .error-message {
+    color:red;
+  }
+  .error input {
+      box-shadow: 0 0 3px #CC0000;
+   }
+  .valid input {
+      box-shadow: 0 0 3px #36cc00;
+   }
+</style>
+
+{% endblock %}
+
+{% block content %}
+<h2><a href="https://htmx.org/examples/inline-validation/">Inline Validation</a></h2>
+
+<h3>Signup Form</h3>
+
+<p>Enter an email into the input below and on tab out it will be validated. Only "test@test.com" will pass.</p>
+
+<form hx-post="/contact">
+  {{ render_partial('partials/inline_validation_email.html', email="") }}
+  <div class="form-group">
+    <label>First Name</label>
+    <input type="text" class="form-control" name="firstName">
+  </div>
+  <div class="form-group">
+    <label>Last Name</label>
+    <input type="text" class="form-control" name="lastName">
+  </div>
+  <button class="btn btn-default">Submit</button>
+</form>
+
+
+{% endblock %}

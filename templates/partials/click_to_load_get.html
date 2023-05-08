@@ -1,0 +1,17 @@
+
+{% for agent in agents %}
+    <tr>
+        <td>{{ agent.name }}</td>
+        <td>{{ agent.email }}</td>
+        <td>{{ agent.id }}</td>
+    </tr>
+{% endfor %}    
+<tr id="replaceMe">
+    <td colspan="3">
+        <center>
+    <button class="btn" hx-get="/contacts/?page={{ next_page }}" hx-target="#replaceMe" hx-swap="outerHTML">
+    Load More Agents... <img class="htmx-indicator" src="/img/bars.svg">
+    </button>
+    </center>
+</td>
+</tr>

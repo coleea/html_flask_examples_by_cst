@@ -1,0 +1,15 @@
+{% for agent in agents %}
+    <tr>
+        <td>{{ agent.name }}</td>
+        <td>{{ agent.email }}</td>
+        <td>{{ agent.id }}</td>
+    </tr>
+{% endfor %} 
+
+    <tr hx-get="/infinite-scroll-contacts?page={{ next_page }}"
+    hx-trigger="revealed"
+    hx-swap="afterend">
+    <td>{{ last_agent.name }}</td>
+    <td>{{ last_agent.email }}</td>
+    <td>{{ last_agent.id }}</td>
+    </tr>

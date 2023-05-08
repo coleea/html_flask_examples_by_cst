@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Click to Load
+{% endblock %}
+
+{% block content %}
+
+<h2><a href="https://htmx.org/examples/click-to-load/">Click to load</a></h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{ render_partial('partials/click_to_load_get.html', agents=agents, next_page=next_page) }}
+    </tbody>
+</table>
+{% endblock %}

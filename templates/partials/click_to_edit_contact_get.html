@@ -1,0 +1,9 @@
+
+<div hx-target="this" hx-swap="outerHTML">
+    <div><label>First Name</label>: {{ contact['name'] }} </div>
+    <div><label>Last Name</label>: {{ contact['surname'] }} </div>
+    <div><label>Email</label>: {{ contact['email'] }} </div>
+    <button hx-get="/contact/{{ id }}/edit" class="btn btn-primary">
+    Click To Edit
+    </button>
+</div>

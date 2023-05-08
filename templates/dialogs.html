@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Dialogs - Browser
+{% endblock %}
+
+{% block content %}
+
+<h2><a href="https://htmx.org/examples/dialogs/">Dialogs - Browser</a></h2>
+
+<div>
+  <button class="btn"
+          hx-post="/submit"
+          hx-prompt="Enter a string"
+          hx-confirm="Are you sure?"
+          hx-target="#response">
+    Prompt Submission
+  </button>
+  <div id="response"></div>
+</div>
+
+{% endblock %}
