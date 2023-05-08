@@ -1,12 +1,17 @@
+# example of htmx + python flask 
+
+## This repo is forked from `https://tildegit.org/cst/htmx_examples`
+
+---
+
 # Enjoy the [HTMX examples](https://htmx.org/examples/) rendered with [Flask](https://flask.palletsprojects.com/en/2.1.x/)!
 
 
-## Install
+## Install (ubuntu)
 
 
 ```
-git clone
-cd /htmx-examples-with-flask
+sudo apt install pipenv
 pipenv install
 ```
 
