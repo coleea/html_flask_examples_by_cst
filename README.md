@@ -7,23 +7,72 @@
 # Enjoy the [HTMX examples](https://htmx.org/examples/) rendered with [Flask](https://flask.palletsprojects.com/en/2.1.x/)!
 
 
-## Install (ubuntu)
+## Run on linux/mac
 
-never use python 3.10 version is incompetible
+you must install python 3.8
 
-```
-sudo apt install pipenv
+```bash
+pip install pipenv
 pipenv install
-```
-
-## Run
-```
+pip env shell
+pip install colorama
 ./run
 ```
+Open http://localhost:5000/
 
-## Use
-  - Open http://127.0.0.1:5000/
-  - Enjoy!
+---
+
+## Run on windows
+
+you must install python 3.8
+
+```powershell
+pip install pipenv
+pipenv install
+pip env shell
+pip install colorama
+.\run_windows.ps1
+```
+Open http://localhost:5000/
+
+---
+
+## 이 프로젝트에 사용된 라이브러리
+
+- frontend
+  - htmx
+    - high power tools for HTML
+    - https://htmx.org/
+  - hyperscript
+    - An easy & approachable language for modern web front-ends
+    - https://hyperscript.org/
+  - Sortable.js
+    - JavaScript library for reorderable drag-and-drop lists
+    - https://sortablejs.github.io/Sortable/
+- server
+  - flask
+    - a lightweight WSGI web application framework
+    - https://github.com/pallets/flask
+  - jinja_partials
+    - Simple reuse of partial HTML page templates in the Jinja template language for Python web frameworks
+    - https://github.com/mikeckennedy/jinja_partials
+
+---
+
+## htmx 기본문법
+
+- hx-post="/click"
+  - POST로 "/click" 에 요청을 보낸다. 이 요청은 fetch가 아닌 XMLHttpRequest로 수행된다
+- hx-trigger="click" 
+  - onclick에 해당한다. hx-post가 어떤 이벤트로 트리거 되는지를 나타낸다
+- hx-target="#parent-div"
+  - querySelector로 #parent-div 엘리먼트를 찾고 그 엘리먼트를 리스폰스 받은 엘리먼트로 교체한다
+
+- hx-swap="outerHTML"
+  - 엘리먼트를 교체할 때 outerHTML의 값을 교체한다
+  - innerHTML의 값을 교체할 수도 있다
+
+---
 
 ## What is where
 

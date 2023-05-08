@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+
+    <script src="https://unpkg.com/hyperscript.org@0.9.5"></script>
+    
+    <!-- <script src="https://unpkg.com/htmx.org@1.7.0" integrity="sha384-EzBXYPt0/T6gxNp0nuPtLkmRpmDBbjg6WmCUZRLXBBwYYmwAUxzlSGej0ARHX0Bo" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.2/htmx.min.js" crossorigin="anonymous"></script>
+    <link href="{{ url_for('static', filename='site.css') }}" rel="stylesheet">
+    
+    <title>{% block title %}{% endblock %}</title>
+
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+    <a href="{{ url_for('get_htmx_examples')}}">Back to Examples</a> 
+    {% block content %}{% endblock %}
+</body>
+</html>
